@@ -36,5 +36,12 @@ app.listen(port, () => {
 const cors = require("cors");
 app.use(express.json());
 
-app.use(cors()); // Allows all origins (Use carefully)
+app.use(
+  cors({
+    origin: "https://animated-truffle-9c9f13.netlify.app", // Allow frontend
+    methods: "GET, POST, PUT, DELETE, OPTIONS",
+    allowedHeaders: "Content-Type, Authorization",
+    credentials: true, // Allow cookies/auth headers
+  })
+);
 
