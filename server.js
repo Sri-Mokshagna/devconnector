@@ -34,6 +34,7 @@ app.listen(port, () => {
     console.log(`listening on port : ${port}`);
 });
 const cors = require("cors");
+app.use(express.json());
 
 app.use(
   cors({
