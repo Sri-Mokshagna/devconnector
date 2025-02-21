@@ -33,3 +33,13 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log(`listening on port : ${port}`);
 });
+const express = require("express");
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: "https://animated-truffle-9c9f13.netlify.app",
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
+  })
+);
